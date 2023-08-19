@@ -1,6 +1,5 @@
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { nanoid } from 'nanoid';
 import {
   FormikForm,
   Label,

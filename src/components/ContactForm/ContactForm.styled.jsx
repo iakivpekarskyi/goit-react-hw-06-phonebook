@@ -21,7 +21,7 @@ export const FormikField = styled(Field)`
   width: 160px;
   height: 30px;
   border-width: 1px;
-  border-radius: 4px;
+  border-radius: 8px;
   border-color: #cfcfcf;
 `;
 

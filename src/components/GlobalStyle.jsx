@@ -8,6 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #c9c9c9
 }
 
 code {
@@ -34,8 +35,8 @@ img {
 
 ul {
   list-style: inside;
-  /* margin: 0;
-  padding-left: 0; */
+  padding: 0;
+  margin: 0;
 }
 
 a {

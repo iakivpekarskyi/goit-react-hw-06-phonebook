@@ -10,7 +10,7 @@ export const Layout = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #d8d8d8;
   border-radius: 15px;
   color: #787878;
 
