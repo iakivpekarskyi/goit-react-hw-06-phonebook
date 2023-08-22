@@ -11,6 +11,7 @@ import { addContact, deleteContact } from 'redux/contactsSlice';
 
 export const App = () => {
   const contacts = useSelector(getContacts);
+
   const dispatch = useDispatch();
 
   const handleAddContact = ({ name, number }) => {
@@ -32,8 +33,8 @@ export const App = () => {
         <h1>Phone book</h1>
         <ContactForm onAddContact={handleAddContact} />
         <h2>Contacts</h2>
-        <Filter />
-        <ContactList contacts={contacts} deleteContact={handleDeleteContact} />
+        {contacts && contacts.length !== 0 && <Filter />}
+        <ContactList deleteContact={handleDeleteContact} />
       </ErrorBoundary>
     </Layout>
   );

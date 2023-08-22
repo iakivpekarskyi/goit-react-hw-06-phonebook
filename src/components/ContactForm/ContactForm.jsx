@@ -7,6 +7,8 @@ import {
   ErrorText,
   FormBtn,
 } from './ContactForm.styled';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -24,9 +26,11 @@ const initialValues = {
   number: '',
 };
 
-export const ContactForm = ({ onAddContact }) => {
+export const ContactForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
-    onAddContact(...values);
+    dispatch(addContact(values));
     resetForm();
   };
 

@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
+  console.log(contacts);
+
   return (
     <ContactListWrap>
       {contacts.map(({ id, name, number }) => {
