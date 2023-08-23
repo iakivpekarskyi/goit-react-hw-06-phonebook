@@ -31,9 +31,7 @@ export const ContactForm = () => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
-    const { name, number } = values;
-
+  const handleSubmit = ({ name, number }, { resetForm }) => {
     if (contacts.find(contact => contact.name === name)) {
       alert(`${name} is already in contacts list`);
       return;

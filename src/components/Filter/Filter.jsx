@@ -9,6 +9,7 @@ export const Filter = () => {
   const filter = useSelector(getFilter);
 
   const onFilterChange = event => {
+    console.log('Typed value:', event.target.value);
     dispatch(setFilter(event.target.value));
   };
 
