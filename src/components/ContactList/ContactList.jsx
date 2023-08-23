@@ -1,10 +1,10 @@
 import { ContactListItem } from 'components/ContactListItem/ContactListItem';
 import { ContactListWrap } from './ContactList.styled';
 import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/selectors';
 
 export const ContactList = () => {
-  const contacts = useSelector(state => state.contacts);
-  console.log(contacts);
+  const contacts = useSelector(getContacts);
 
   return (
     <ContactListWrap>
