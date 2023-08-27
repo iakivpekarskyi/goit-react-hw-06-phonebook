@@ -7,9 +7,7 @@ import {
   ErrorText,
   FormBtn,
 } from './ContactForm.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
-import { getContacts } from 'redux/selectors';
+import { useContacts } from 'hooks/useContact';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -28,15 +26,15 @@ const initialValues = {
 };
 
 export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
+  const { addNewContact, fetchAllContacts } = useContacts();
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
-    if (contacts.find(contact => contact.name === name)) {
+    const allContacts = fetchAllContacts();
+    if (allContacts.find(contact => contact.name === name)) {
       alert(`${name} is already in contacts list`);
       return;
     }
-    dispatch(addContact({ name, number }));
+    addNewContact({ name, number });
     resetForm();
   };
 
