@@ -34,7 +34,7 @@ export const ContactForm = () => {
       alert(`${name} is already in contacts list`);
       return;
     }
-    addNewContact({ name, number });
+    addNewContact(name, number);
     resetForm();
   };
 
