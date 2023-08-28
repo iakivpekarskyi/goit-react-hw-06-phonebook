@@ -30,6 +30,7 @@ export const ContactForm = () => {
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
     const allContacts = fetchAllContacts();
+
     if (allContacts.find(contact => contact.name === name)) {
       alert(`${name} is already in contacts list`);
       return;

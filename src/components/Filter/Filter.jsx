@@ -3,11 +3,10 @@ import { FilterInput } from './Filter.styled';
 import { useContacts } from 'hooks/useContact';
 
 export const Filter = () => {
-  const { filter, showFilter, clearContactFilter } = useContacts();
+  const { filter, showFilter } = useContacts();
 
   const onFilterChange = event => {
-    showFilter();
-    clearContactFilter();
+    showFilter(event.target.value);
   };
 
   return (

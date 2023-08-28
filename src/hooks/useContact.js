@@ -21,8 +21,6 @@ export const useContacts = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  //   console.log('allcontacts', contacts);
-
   const showFilter = filterValue => {
     dispatch(setFilter(filterValue));
   };
@@ -31,10 +29,10 @@ export const useContacts = () => {
     dispatch(clearFilter());
   };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+  const filteredContacts = contacts.filter(
+    contact =>
+      contact && contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-  console.log('filtered contacts', filteredContacts);
 
   return {
     contacts,
