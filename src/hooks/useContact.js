@@ -10,7 +10,7 @@ export const useContacts = () => {
   const filter = useSelector(getFilter);
 
   const addNewContact = ({ name, number }) => {
-    dispatch(addContact(name, number));
+    dispatch(addContact({ name, number }));
   };
 
   const removeContact = id => {
