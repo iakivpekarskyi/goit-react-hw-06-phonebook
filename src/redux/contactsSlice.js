@@ -23,12 +23,8 @@ const contactsSlice = createSlice({
     deleteContact: (state, { payload }) => {
       return state.filter(contact => contact.id !== payload);
     },
-    fetchContacts: (state, { payload }) => {
-      return [...state, payload];
-    },
   },
 });
 
-export const { addContact, deleteContact, fetchContacts } =
-  contactsSlice.actions;
+export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

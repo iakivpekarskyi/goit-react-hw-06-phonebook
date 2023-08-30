@@ -1,6 +1,10 @@
-import { useCallback } from 'react';
+// import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, deleteContact, fetchContacts } from 'redux/contactsSlice';
+import {
+  addContact,
+  deleteContact,
+  // fetchContacts
+} from 'redux/contactsSlice';
 import { getContacts, getFilter } from 'redux/selectors';
 import { setFilter, clearFilter } from 'redux/filterSlice';
 
@@ -17,9 +21,9 @@ export const useContacts = () => {
     dispatch(deleteContact(id));
   };
 
-  const fetchAllContacts = useCallback(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  //   const fetchAllContacts = useCallback(() => {
+  //     dispatch(fetchContacts());
+  //   }, [dispatch]);
 
   const showFilter = filterValue => {
     dispatch(setFilter(filterValue));
@@ -42,6 +46,6 @@ export const useContacts = () => {
     clearContactFilter,
     addNewContact,
     removeContact,
-    fetchAllContacts,
+    //  fetchAllContacts,
   };
 };
